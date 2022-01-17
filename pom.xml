@@ -45,7 +45,12 @@
 
 
 
-
+		<!-- Needed for md5 Hashing/Digest version 1 (Non-Parent)-->
+		<dependency>
+			<groupId>jakarta.xml.bind</groupId>
+			<artifactId>jakarta.xml.bind-api</artifactId>
+			<version>4.0.0-RC2</version>
+		</dependency>
 
 		<!-- Jedis Client -->
 		<dependency>
