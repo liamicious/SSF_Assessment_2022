@@ -7,7 +7,26 @@
     <title>Book Information</title>
 </head>
 <body>
-    <div class="row">
+    <div class="col-8">
+        <table class="table table-hover">
+            <tr>
+                <td>
+                    <h1>Book Title:</h1>
+                    <strong data-th-text="${detailBook.bookTitle}"> </strong>
+
+                    <h1>Book Description:</h1>
+                    <strong data-th-text="${detailBook.bookDescription}"> </strong>
+
+                    <h1>Book Excerpt:</h1>
+                    <strong data-th-text="${detailBook.bookExcerpt}"> </strong>
+
+                    <h1>Cached:</h1>
+                    <strong data-th-text="${detailBook.isCached}"> </strong>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="row mt-5">
         <div class="col d-flex justify-content-end">
             <a href="/" class="btn btn-primary btn-lg">Back to Search</a>
         </div>
