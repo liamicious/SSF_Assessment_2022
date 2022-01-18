@@ -1,6 +1,5 @@
 package sg.nus.iss.ssftest.Configuration;
 
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,6 +15,8 @@ import static sg.nus.iss.ssftest.Constants.*;
 
 @Configuration
 public class BookRedisConfig {
+
+    public static final String ENV_REDIS_PASSWORD = System.getenv("REDIS_PW");
 
     private final Logger logger = Logger.getLogger(BookRedisConfig.class.getName());
 
