@@ -6,12 +6,14 @@ import org.springframework.stereotype.Service;
 
 import sg.nus.iss.ssftest.Repository.*;
 
-@Service
 public class BookCacheService {
 
-    @Autowired
-    BookRepository bookRepo;
-
-    private final Logger logger = Logger.getLogger(BookCacheService.class.getName());
+    /*
+     * @Autowired
+     * BookRepository bookRepo;
+     * 
+     * private final Logger logger =
+     * Logger.getLogger(BookCacheService.class.getName());
+     */
 
 }

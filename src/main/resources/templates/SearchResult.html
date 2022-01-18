@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Result</title>
+</head>
+<body>
+    <h1>Search result for "<span data-th-text="${searchTitleName}">book title</span>"</h1>
+        <div class="row" data-th-if="${#lists.isEmpty(searchBookIdList)}">
+            <div class="col">
+                <h2>No results found...</h2>
+            </div>
+        </div>
+        <ul data-th-each="list : ${searchBookIdList}">
+        <a th:href="@{'book/' + ${list.bookId}}">
+        <span data-th-text="${list.bookTitle}"></span>
+        </a>
+        </ul>
+    <div class="row">
+        <div class="col d-flex justify-content-end">
+            <a href="/" class="btn btn-primary btn-lg">Back to Search</a>
+        </div>
+    </div>
+</body>
+</html>
