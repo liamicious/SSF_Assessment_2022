@@ -13,9 +13,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @Configuration
-public class ClassRedisConfig {
+public class BookRedisConfig {
 
-    private final Logger logger = Logger.getLogger(ClassRedisConfig.class.getName());
+    private final Logger logger = Logger.getLogger(BookRedisConfig.class.getName());
 
     @Value("${spring.redis.host}")
     private String redisHost;
@@ -25,7 +25,5 @@ public class ClassRedisConfig {
 
     @Value("${spring.redis.database}")
     private int redisDatabase;
-
-
 
 }

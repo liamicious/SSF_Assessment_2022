@@ -16,45 +16,12 @@ import jakarta.json.JsonArray;
 import jakarta.json.JsonObject;
 import jakarta.json.JsonReader;
 
-
 @Service
-public class CacheService {
+public class BookCacheService {
 
     @Autowired
-    ClassRepository repo;
+    BookRepository bookRepo;
 
-    private final Logger logger = Logger.getLogger(CacheService.class.getName());
+    private final Logger logger = Logger.getLogger(BookCacheService.class.getName());
 
-
-
-
-    //For Arrays
-        //converting into a list of Weather objects
-        List<ClassModel> thatList  = jsonarray.stream()
-            .map(v->(JsonObject)v)     //cast as a stream of Json Objects
-            .map(ClassModel::createfromJsonArray) //cast as a stream of Weather objects
-            .collect(Collectors.toList()); //collect as a Collection List of Weather Objects
-        return Optional.of(thatList);
-
-
-
-    private JsonArray parseJsonArray(String jsonString){
-        try (InputStream is = new ByteArrayInputStream(jsonString.getBytes())) {
-            JsonReader reader = Json.createReader(is);
-            return reader.readArray();            
-        } catch (Exception e) {
-            //Log errors
-        }
-        return Json.createArrayBuilder().build();
-    }
-    
-    private JsonObject parseJsonObject(String jsonString){
-        try (InputStream is = new ByteArrayInputStream(jsonString.getBytes())) {
-            JsonReader reader = Json.createReader(is);
-            return reader.readObject();            
-        } catch (Exception e) {
-            //Log errors
-        }
-        return Json.createObjectBuilder().build();
-    }
 }

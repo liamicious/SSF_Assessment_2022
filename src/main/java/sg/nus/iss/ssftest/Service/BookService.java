@@ -1,5 +1,5 @@
 package sg.nus.iss.ssftest.Service;
 
-public class Service {
+public class BookService {
 
 }
