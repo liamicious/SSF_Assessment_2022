@@ -28,20 +28,14 @@ public class BookRedisConfig {
     @Value("${spring.redis.database}")
     private Integer redisDatabase;
 
-    private final String redisPassword;
-
-    public BookRedisConfig() {
-        redisPassword = ENV_REDIS_PASSWORD;
-    }
-
     @Bean
     public RedisTemplate<String, String> redisTemplateFactory() {
 
         final RedisStandaloneConfiguration redisConfig = new RedisStandaloneConfiguration();
         redisConfig.setHostName(redisHost);
         redisConfig.setPort(redisPort);
-        if (null != redisPassword) {
-            redisConfig.setPassword(redisPassword);
+        if (null != ENV_REDIS_PASSWORD) {
+            redisConfig.setPassword(ENV_REDIS_PASSWORD);
             logger.info("Set Redis password");
         }
         redisConfig.setDatabase(redisDatabase);
