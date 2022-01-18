@@ -29,7 +29,6 @@ public class BookRedisConfig {
     @Value("${spring.redis.database}")
     private Integer redisDatabase;
 
-    @Bean
     public RedisTemplate<String, String> redisTemplateFactory() {
 
         final RedisStandaloneConfiguration redisConfig = new RedisStandaloneConfiguration();
